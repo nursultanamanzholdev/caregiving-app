@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>CAREGIVER List</h2>
+<ul>
+{% for caregiver in caregivers %}
+    <li>{{ caregiver.user.email }} - {{ caregiver.caregiving_type }} <a href="{% url 'caregiver_update' caregiver.user.user_id %}">Edit</a> <a href="{% url 'caregiver_delete' caregiver.user.user_id %}">Delete</a></li>
+{% endfor %}
+</ul>
+<a href="{% url 'caregiver_create' %}">Create New Caregiver</a>
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+{% endblock %}

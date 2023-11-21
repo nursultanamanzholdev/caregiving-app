@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Delete Job</h2>
+<p>Are you sure you want to delete Job posted by {{ job.member.user.given_name }} {{ job.member.user.surname }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+</form>
+{% endblock %}

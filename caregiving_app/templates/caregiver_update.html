@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Update CAREGIVER</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    {{ caregiver_form.as_p }}
+    <button type="submit">Update</button>
+</form>
+{% endblock %}

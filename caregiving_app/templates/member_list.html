@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Member List</h2>
+<ul>
+{% for member in members %}
+    <li>{{ member.user.email }} - {{ member.house_rules }} <a href="{% url 'member_update' member.user.user_id %}">Edit</a> <a href="{% url 'member_delete' member.user.user_id %}">Delete</a></li>
+{% endfor %}
+</ul>
+<a href="{% url 'member_create' %}">Create New Member</a>
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+{% endblock %}

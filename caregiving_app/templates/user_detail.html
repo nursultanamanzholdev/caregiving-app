@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>User Detail</h2>
+  <p>Email: {{ user.email }}</p>
+  <p>Name: {{ user.given_name }} {{ user.surname }}</p>
+  <p>City: {{ user.city }}</p>
+  <p>Phone_number: {{ user.phone_number }}</p>
+  <p>Profile Description: {{ user.profile_desciption }}</p>
+  <p>Password: {{ user.password }}</p>
+  <a href="{% url 'user_update' user_id=user.user_id %}">Update User Information</a>
+  <a href="{% url 'user_confirm_delete' user_id=user.user_id %}">Delete User</a>
+  <a href="{% url 'user_list' %}">Back to User List</a>
+{% endblock %}

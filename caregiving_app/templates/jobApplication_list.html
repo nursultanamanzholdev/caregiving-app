@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>JOB APPLICATION List</h2>
+<ul>
+{% for jobApplication in jobApplications %}
+    <li>{{ jobApplication.caregiver.user.given_name }} - {{ jobApplication.date_applied }} </li>
+{% endfor %}
+</ul>
+<a href="{% url 'jobApplication_create' %}">Create New Job Application</a>
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+{% endblock %}

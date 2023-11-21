@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>JOB List</h2>
+<ul>
+{% for job in jobs %}
+    <li>{{ job.member.user.given_name }} - {{ job.other_requirements }} <a href="{% url 'job_update' job.member.user.user_id %}">Edit</a> <a href="{% url 'job_delete' job.member.user.user_id %}">Delete</a></li>
+{% endfor %}
+</ul>
+<a href="{% url 'job_create' %}">Create New Job</a>
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+{% endblock %}

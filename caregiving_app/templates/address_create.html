@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Create Address</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ member_form.as_p }}
+    {{ address_form.as_p }}
+    <button type="submit">Create</button>
+</form>
+<a href="{% url 'address_list' %}">Back to List Addresses</a>
+{% endblock %}

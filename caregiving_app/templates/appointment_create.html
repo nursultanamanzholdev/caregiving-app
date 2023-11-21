@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Create Appointment</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ caregiver_form.as_p }}
+    {{ appointment_form.as_p }}
+    <button type="submit">Create</button>
+</form>
+<a href="{% url 'appointment_list' %}">Back to List Appointments</a>
+{% endblock %}

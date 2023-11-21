@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Create Job</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ member_form.as_p }}
+    {{ job_form.as_p }}
+    <button type="submit">Create</button>
+</form>
+<a href="{% url 'job_list' %}">Back to List Jobs</a>
+{% endblock %}
