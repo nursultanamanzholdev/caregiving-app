@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('https://caregiving-app.onrender.com/', views.dashboard, name='dashboard'),
+    path('', views.dashboard, name='dashboard'),
     path('user_create/', views.user_create, name='user_create'),
     path('user_list/', views.user_list, name='user_list'),
     path('user_update/<int:user_id>', views.user_update, name='user_update'),
